@@ -139,7 +139,7 @@ def get_folder_objects(root_path):
                 pass
 
 
-def main(folder_path):
+def move_file_to_folder(folder_path):
     scan(folder_path)
 
     for file in jpeg_files:
@@ -216,11 +216,14 @@ def main(folder_path):
 
     get_folder_objects(folder_path)
 
-if __name__ == '__main__':
+def main():
     path = sys.argv[1]
     print(f"Start in {path}")
 
     arg = Path(path)
 
-    main(arg.resolve())
+    move_file_to_folder(arg.resolve())
+
+if __name__ == '__main__':
+    main()
     #comment
